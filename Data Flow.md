@@ -22,10 +22,11 @@ adb shell
 cat /mnt/vendor/persist/sensors/iaqdata.json
 ```
 ### Đối với Temp, Humi và IAQ average
-Các thông số này được đẩy trực tiếp lên từ tầng Non-hlos thông qua các đường dữ liệu tương ứng.
+Các thông số này được đẩy trực tiếp lên từ tầng Non-hlos thông qua các đường dữ liệu tương ứng như trên.
 ## Mong muốn triển khai
 Dữ liệu mong muốn thu được bao gồm:
 - Temp - Nhiệt độ
 - Humi - Độ ẩm
 - Press - Áp suất
 - Gas_res - Trở kháng khí
+Các dữ liệu được lưu vào file và có thể được truy xuất bởi mô hình AI để thực hiện chức năng phân biệt mùi.
