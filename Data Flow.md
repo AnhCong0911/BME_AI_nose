@@ -1,5 +1,6 @@
 # Luồng dữ liệu
-Sử dụng các đường dữ liệu để đẩy dữ liệu từ tầng Non-hlos lên tầng Ứng dụng. <br/>
+Sử dụng các đường dữ liệu để đẩy dữ liệu từ tầng Non-hlos lên tầng Ứng dụng.
+
 Có 4 loại đường dữ liệu được xác định bởi nhà sản xuất, bao gồm:
 - BME68x_TEMPERATURE (Temp_path)
 - BME68x_HUMIDITY (Humi_path)
@@ -12,7 +13,8 @@ Dữ liệu được đẩy lên và nhận trên GinnoAir bao gồm:
 - IAQ average- Chất lượng không khí trung bình (Press_path)
 - IAQ - Chất lượng không khí (Gas_path)
 ### Đối với IAQ
-Thông số IAQ được lưu vào file dạng JSON, có đường dẫn "/mnt/vendor/persist/sensors/iaqdata.json" trong điện thoại.<br/>
+Thông số IAQ được lưu vào file dạng JSON, có đường dẫn "/mnt/vendor/persist/sensors/iaqdata.json" trong điện thoại.
+
 Cách đọc file như sau:
 1. Kết nối máy tính với điện thoại thông qua dây USB
 2. Mở Terminal trên máy tính. 
@@ -28,5 +30,6 @@ Dữ liệu mong muốn thu được bao gồm:
 - Temp - Nhiệt độ
 - Humi - Độ ẩm
 - Press - Áp suất
-- Gas_res - Trở kháng khí<br/>
+- Gas_res - Trở kháng khí <br/>
+
 Các dữ liệu được lưu vào file và có thể được truy xuất bởi mô hình AI để thực hiện chức năng phân biệt mùi.
