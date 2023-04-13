@@ -28,5 +28,5 @@ Dữ liệu mong muốn thu được bao gồm:
 - Temp - Nhiệt độ
 - Humi - Độ ẩm
 - Press - Áp suất
-- Gas_res - Trở kháng khí
+- Gas_res - Trở kháng khí<br/>
 Các dữ liệu được lưu vào file và có thể được truy xuất bởi mô hình AI để thực hiện chức năng phân biệt mùi.
