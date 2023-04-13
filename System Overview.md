@@ -1,6 +1,6 @@
 # Tổng quan hệ thống
 Hoạt động tổng quan của hệ thống như hình duới đây:  
-![SO](/images/System Overview.png)
+![SO](/images/System_Overview.png)
 
 Hệ thống giao tiếp với cảm biến bằng giao thức SPI, để truy xuất dữ liệu.  
 Kiến trúc hệ thống bao gồm các lớp cơ bản trong kiến trúc Android và lớp Non-hlos.  
