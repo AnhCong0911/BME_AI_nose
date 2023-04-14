@@ -1,6 +1,6 @@
 # Luồng dữ liệu
 Trình bày cách đẩy dữ liệu từ tầng Non-hlos lên tầng Ứng dụng.  
-<img src="/images/Data_Flow.png" alt="Data_Flow" width="300" height="300" align="center">
+<img src="/images/Data_Flow.png" alt="Data_Flow" width="450" height="450" align="center">
 
 
 Sử dụng các đường dữ liệu. Có 4 loại đường dữ liệu được xác định bởi nhà sản xuất, bao gồm:
