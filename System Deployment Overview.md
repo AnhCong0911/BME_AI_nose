@@ -8,7 +8,7 @@ Hệ thống cần thiết kế có chức năng phân biệt khí Gas và khôn
 Sau khi cài đặt, có đầy đủ mã nguồn để triển khai hệ thống.
 ## Kiến trúc hệ thống
 Kiến trúc tổng quan của hệ thống như hình duới đây:  
-![SO](/images/System Overview.png)  
+![SO](/images/System_Overview.png)  
 Hệ thống giao tiếp với cảm biến bằng giao thức SPI, để truy xuất dữ liệu.  
 Kiến trúc hệ thống bao gồm các lớp cơ bản trong kiến trúc Android và lớp Non-hlos.  
 Non-hlos là một thuật ngữ xác định bởi Qualcomm, tham chiếu đến thành phần Firmware. Trong non-hlos, có nhiều khối xử lý, khối xử lý các tác vụ liên quan đến cảm biến là ADSP.  
