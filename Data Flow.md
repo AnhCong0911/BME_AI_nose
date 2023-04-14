@@ -1,7 +1,8 @@
 # Luồng dữ liệu
-Sử dụng các đường dữ liệu để đẩy dữ liệu từ tầng Non-hlos lên tầng Ứng dụng.
+Trình bày cách đẩy dữ liệu từ tầng Non-hlos lên tầng Ứng dụng.  
+![Data_Flow](/images/Data_Flow.png)
 
-Có 4 loại đường dữ liệu được xác định bởi nhà sản xuất, bao gồm:
+Sử dụng các đường dữ liệu. Có 4 loại đường dữ liệu được xác định bởi nhà sản xuất, bao gồm:
 - BME68x_TEMPERATURE (Temp_path)
 - BME68x_HUMIDITY (Humi_path)
 - BME68x_PRESSURE (Press_path)
