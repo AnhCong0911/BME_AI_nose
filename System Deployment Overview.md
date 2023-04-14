@@ -1,5 +1,7 @@
 # Tổng quan quá trình triển khai hệ thống
 Hệ thống cần thiết kế có chức năng phân biệt khí Gas và không khí trong điều kiện phòng.
+## Đối tượng, thiết bị
+Điện thoại sử dụng hệ điều hành Android có tích hợp cảm biến BME68x.
 ## Cài đặt
 1. Cài và chạy docker file
 2. Build Android source
