@@ -1,7 +1,7 @@
 # Luồng dữ liệu
 Trình bày luồng đẩy dữ liệu từ cảm biến vật lý lên lớp Ứng dụng trên thiết bị.  
 Sơ đồ khối tổng quan như sau:  
-<img src="/images/Data_Flow_Block_diagram_Bottom_to_Top.png" alt="Block_diagram" width="400" height="400" align="center">
+![Block_diagram](/images/Data_Flow_Block_diagram_Bottom_to_Top.png)
 
 Các thành phần chính bao gồm:
 - Physical Sensor: Thiết bị cảm biến vật lý. Ở đây, là BME68x, cảm biến môi trường.
