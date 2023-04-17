@@ -1,6 +1,6 @@
 # Luồng dữ liệu
 Trình bày luồng đẩy dữ liệu từ cảm biến vật lý lên lớp Ứng dụng trên thiết bị.
-
+## Tổng quan
 Sơ đồ khối tổng quan như sau:  
 ![Block_diagram](/images/Data_Flow_Block_diagram_Bottom_to_Top.png)
 
