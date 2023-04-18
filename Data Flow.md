@@ -1,31 +1,32 @@
 # Luồng dữ liệu
-Trình bày luồng đẩy dữ liệu từ cảm biến vật lý lên lớp Ứng dụng trên thiết bị dựa trên [kiến trúc hệ thống](System Deployment Overview.md) đã trình bày.
+Luồng đẩy dữ liệu từ cảm biến vật lý lên lớp Ứng dụng trên thiết bị dựa trên [kiến trúc hệ thống](System Deployment Overview.md) đã trình bày.
 
 ## Sơ đồ luồng dữ liệu
-Phần này trình bày góc nhìn tổng quan để hiểu luồng dữ liệu.
+Góc nhìn tổng quan của luồng dữ liệu như sau.
 ![DF](/images/Push_Data_Flow.png)
 
 ### 1. Các thành phần
-- BME68x: Thiết bị cảm biến vật lý, thuộc Sensor hub. Đây là cảm biến môi trường thực hiện thu thập và lưu trữ dữ liệu vào bộ nhớ.
-- Sensor Instance: Đối tượng biểu diễn cho cảm biến hoạt động ở cấu hình cụ thể, nằm trong trình điều khiển cảm biến. Sensor Driver: Trình điều khiển là phần mềm, có nhiệm vụ quản lý cảm biến trên thiết bị và cung cấp giao diện chuẩn cho các phần mềm bậc cao để truy xuất dữ liệu từ cảm biến. Nó truyền thông với cảm biến bằng các chuẩn giao tiếp phần cứng như SPI, I2C.
-- SEE: Sensors Execution Environment, là một phần mềm quản lý cảm biến của Qualcomm, thuộc SSC framework. Nó cung cấp các khung hướng sự kiện, các giao diện, API đơn giản, để thao tác với cảm biến.
-- Sensor/Client API: Các API được định nghĩa bởi nhà sản xuất cảm biến, Qualcomm.
-- Android HAL: Lớp cung cấp giao diện cho các lớp trên, để thực hiện quản lý và điều khiển cảm biến.
-- Android App: Các ứng dụng sử dụng các thông số của cảm biến để hiện thị lên giao diện người dùng.
-- HAL: Hardware Abstraction Layer, lớp trừu tượng phần cứng. Một lớp quan trọng trong kiến trúc của hệ điều hành Android. HAL cung cấp giao diện tiêu chuẩn cho lớp trên, để thực hiện các chức năng của phần cứng cụ thể.
-- App: Application Layer, lớp ứng dụng. Các ứng dụng thể hiện các thông số của cảm biến lên giao diện người dùng.
+- BME68x: Thiết bị cảm biến vật lý, thuộc Sensor hub. Thực hiện thu thập các thông số trạng thái của môi trường, tạo thành các mẫu dữ liệu, và lưu trữ trong bộ nhớ.
+- Sensor Instance: Đại diện cho cảm biến BME68x khi hoạt động ở chế độ cấu hình cụ thể, được cài đặt bởi người sử dụng.
+- SEE: Cung cấp các khung hướng sự kiện, các giao diện, API đơn giản, để thao tác với cảm biến.
+- Sensor API: Các API cho phép SEE thao tác với cảm biến và Sensor Instance để cài đặt và truy xuất dữ liệu.
+- Client API: Các API cho phép client truy xuất dữ liệu từ SEE.
+- HAL: Quản lý sự kiện và các cảm biến khả dụng trên thiết bị. Cho phép các ứng dụng lớp trên thao tác với phần cứng khả dụng thông giao diện chuẩn.
+- App: Các ứng dụng sử dụng dữ liệu của cảm biến để hiện thị lên giao diện người dùng và thực hiện các tác vụ xử lý tính toán khác.
 ### 2. Tương tác
+#### BME68x và Sensor Instance
 Sensor Instance truy xuất dữ liệu từ bộ nhớ cảm biến BME68x bằng chuẩn giao tiếp phần cứng SPI; thực hiện hiệu chỉnh, xử lý dữ liệu thô; đẩy dữ liệu lên theo loại tương ứng.  
 Có 4 loại dữ liệu được xác định bởi nhà sản xuất, bao gồm:
-- BME68x_TEMPERATURE (Temp_path)
-- BME68x_HUMIDITY (Humi_path)
-- BME68x_PRESSURE (Press_path)
-- BME68x_GAS (Gas_path)
-
-SEE chứa một tập các framework để thao tác với cảm biến. Hàm ```notify_event()``` được gọi để thông báo cho SEE rằng có sự thay đổi dữ liệu trên cảm biến, và SEE nhận dữ liệu mới.  
-Dữ liệu trên SEE được gửi đến các lớp trên thông qua client API. Trong hệ thống thiết kế, lớp trên của SEE là HAL trong hệ điều hành Android. Lớp trên truy xuất dữ liệu trong SEE thông qua giao diện gói tin của client API.
-
-Từ HAL, các ứng dụng trong hệ điều hành Android có thể lấy dữ liệu cảm biến thông qua SensorManager cung cấp bởi framework API (API hệ thống). 
+- BME68x_TEMPERATURE
+- BME68x_HUMIDITY
+- BME68x_PRESSURE
+- BME68x_GAS
+#### Sensor Instance và SEE
+SEE chứa một tập các framework để thao tác với cảm biến. Hàm ```notify_event()``` được gọi để thông báo cho SEE rằng có sự thay đổi dữ liệu trên cảm biến, và SEE nhận dữ liệu mới.
+#### SEE và HAL  
+Dữ liệu trên SEE được gửi đến client thông qua client API. Trong hệ thống thiết kế, client là HAL. HAL truy xuất dữ liệu từ SEE thông qua giao diện gói tin của client API.
+#### HAL và App
+Từ HAL, các ứng dụng có thể lấy dữ liệu cảm biến thông qua SensorManager cung cấp bởi framework API (API hệ thống). 
 
 
 Cảm biến BME68x thu thập thông số môi trường, lưu dữ liệu vào bộ nhớ. Sensor Driver đọc bộ nhớ của cảm biến, tiền xử lý dữ liệu và đẩy lên thông qua Sensor API. SEE nhận và xử lý dữ liệu, sau đó đẩy dữ liệu lên cho HAL. Lớp ứng dụng lấy dữ liệu từ HAL để hiện thị lên giao diện.
