@@ -5,7 +5,7 @@ Trình bày luồng đẩy dữ liệu từ cảm biến vật lý lên lớp �
 Phần này trình bày cái nhìn tổng quan để hiểu luồng dữ liệu.
 ![DF](/images/Push_Data_Flow.png)
 
-### Các thành phần:
+### 1. Các thành phần:
 - BME68x: Thiết bị cảm biến vật lý, thuộc khối Sensor hub. Đây là cảm biến môi trường thực hiện thu thập và lưu trữ dữ liệu vào bộ nhớ.
 - Sensor Instance: Đối tượng biểu diễn cho cảm biến hoạt động ở cấu hình cụ thể, được thể hiện trong trình điều khiển cảm biến. Sensor Driver: Trình điều khiển là phần mềm, có nhiệm vụ quản lý cảm biến trên thiết bị và cung cấp giao diện chuẩn cho các phần mềm bậc cao để truy xuất dữ liệu từ cảm biến. Nó truyền thông với cảm biến bằng các chuẩn giao tiếp phần cứng như SPI, I2C.
 - SEE: Sensors Execution Environment, là một phần mềm quản lý cảm biến của Qualcomm, thuộc SSC framework. Nó cung cấp các khung hướng sự kiện, các giao diện, API đơn giản, để thao tác với cảm biến.
@@ -14,7 +14,7 @@ Phần này trình bày cái nhìn tổng quan để hiểu luồng dữ liệu.
 - Android App: Các ứng dụng sử dụng các thông số của cảm biến để hiện thị lên giao diện người dùng.
 - HAL: Hardware Abstraction Layer, lớp trừu tượng phần cứng. Một lớp quan trọng trong kiến trúc của hệ điều hành Android. HAL cung cấp giao diện tiêu chuẩn cho lớp trên, để thực hiện các chức năng của phần cứng cụ thể.
 - App: Application Layer, lớp ứng dụng. Các ứng dụng thể hiện các thông số của cảm biến lên giao diện người dùng.
-### Tương tác
+### 2. Tương tác
 Sensor Instance truy xuất dữ liệu từ bộ nhớ cảm biến BME68x bằng chuẩn giao tiếp phần cứng SPI; thực hiện hiệu chỉnh, xử lý dữ liệu thô; đẩy dữ liệu lên theo loại tương ứng.  
 Có 4 loại dữ liệu được xác định bởi nhà sản xuất, bao gồm:
 - BME68x_TEMPERATURE (Temp_path)
