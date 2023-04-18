@@ -34,6 +34,6 @@ Lớp Application triển khai các ứng dụng giao diện tương tác với 
 
 ## Triển khai
 ### 1. Truy xuất dữ liệu từ cảm biến
-### 2. Xây dựng mô hình tự dự liệu
-### 3. Xử lý du liệu, đưa và mô hình
-### 4. Phá triển Ứng dung giao diện
+### 2. Xây dựng mô hình tự dữ liệu
+### 3. Xử lý dữ liệu, đưa vào mô hình
+### 4. Phát triển ng dụng giao diện
