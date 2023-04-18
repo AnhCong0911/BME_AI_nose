@@ -2,7 +2,7 @@
 Trình bày luồng đẩy dữ liệu từ cảm biến vật lý lên lớp Ứng dụng trên thiết bị.
 
 ## Sơ đồ luồng dữ liệu
-Phần này trình bày luồng dữ liệu tổng thể, giúp cho mọi người có cái nhìn cơ bản về cách dữ liệu được truy xuất từ cảm biến vật lý và đẩy lên lớp ứng dụng trên thiết bị.
+Phần này trình bày cái nhìn tổng quan để hiểu luồng dữ liệu.
 ![DF](/images/Push_Data_Flow.png)
 
 ### Các thành phần:
