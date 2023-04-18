@@ -15,16 +15,16 @@ Kiến trúc dưới đây bao gồm các thành phần phần cứng và phần
 
 - Sensor và Sensor hub  
 Sensor thể hiện cho các cảm biến vật lý có trong thiết bị. Với hệ thống cần thiết kế, cảm biến được sử dụng là BME68x. Có hai phiên bản BME680 và BME688.  
-Sensor hub là khối quản lý các cảm biến và xử lý dữ liệu từ chúng.
+Sensor hub là khối phần cứng quản lý các cảm biến và xử lý dữ liệu từ chúng.
 - ADSP  
 ADSP (Application Digital Signal Processor) là bộ xử lý chuyên dụng, thực hiện các tác vụ thời gian thực liên quan đến cảm biến và xử lý tín hiệu số, được tối ưu cho tiêu thụ công suất thấp.
 - SSC  
 SSC (Snapdragon Sensors Core) là một framework phần mềm do Qualcomm phát triển, để quản lý dữ liệu cảm biến trên nền tảng di động Snapdragon.
 - Sensor driver và sensor instance  
-Sensor driver là trình điều khiển có nhiệm vụ quản lý các cảm biến trên thiết bị và cung cấp giao diện cho phần mềm cấp cao hơn để truy cập dữ liệu từ cảm biến.  
-Sensor instance: Thể hiện cho trạng thái của cảm biến khi hoạt động ở một cấu hình cụ thể.
+Sensor Driver: Trình điều khiển là phần mềm, có nhiệm vụ quản lý cảm biến trên thiết bị và cung cấp giao diện chuẩn cho các phần mềm bậc cao để truy xuất dữ liệu từ cảm biến. Nó truyền thông với cảm biến bằng các chuẩn giao tiếp phần cứng như SPI, I2C.
+Sensor instance: Đối tượng đại diện cho trạng thái của cảm biến khi hoạt động ở một cấu hình cụ thể. Được xác định trong trình điều khiển cảm biến.
 - SEE  
-SEE (Sensors Execution Environment) là một phần mềm quản lý cảm biến được phát triển bởi Qualcomm.
+SEE (Sensors Execution Environment) là một phần mềm quản lý cảm biến được phát triển bởi Qualcomm, thuộc SSC framework.
 - Application Processor  
 Bộ xử lý đa năng chính của thiết bị, có nhiệm vụ điều khiển hệ điều hành, khởi chạy ứng dụng và quản lý tài nguyên hệ thống.
 - Android OS  
