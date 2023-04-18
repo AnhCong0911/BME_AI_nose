@@ -16,7 +16,7 @@ Kiến trúc dưới đây bao gồm các thành phần phần cứng và phần
 Sensor thể hiện cho các cảm biến vật lý có trong thiết bị. Với hệ thống cần thiết kế, cảm biến được sử dụng là BME68x. Có hai phiên bản BME680 và BME688.  
 Sensor hub là khối quản lý các cảm biến và xử lý dữ liệu từ chúng.
 ### 2. ADSP 
-ADSP (Application Digital Signal Processor) là bộ xử lý chuyên dụng, thực hiện các tách vụ thời gian thực liên quan đến cảm biến và xử lý tín hiệu số, được tối ưu cho tiêu thụ công suất thấp.
+ADSP (Application Digital Signal Processor) là bộ xử lý chuyên dụng, thực hiện các tác vụ thời gian thực liên quan đến cảm biến và xử lý tín hiệu số, được tối ưu cho tiêu thụ công suất thấp.
 ### 3. SSC
 SSC (Snapdragon Sensors Core) là một framework phần mềm do Qualcomm phát triển, để quản lý dữ liệu cảm biến trên nền tảng di động Snapdragon.
 ### 4. Sensor driver và sensor instance
