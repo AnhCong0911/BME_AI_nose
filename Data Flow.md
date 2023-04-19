@@ -15,6 +15,16 @@ Góc nhìn tổng quan của luồng dữ liệu như sau.
 - App: Các ứng dụng sử dụng dữ liệu của cảm biến để hiện thị lên giao diện người dùng và thực hiện các tác vụ xử lý tính toán khác.
 ### 2. Tương tác
 #### BME68x và Sensor Instance
+
+| STT | Thành phần | Mô tả |
+|-------|-------|-------|
+| 1 | BME68x | Cảm biến vật lý thu thập dữ liệu |
+| 2 | State | Trạng thái của Sensor Instance, lưu trữ thông tin về từng mẫu dữ liệu. |
+| 3 | Sensor Instance | Đại diện cho cảm biến BME68x khi hoạt động ở chế độ cấu hình cụ thể, được cài đặt bởi người sử dụng. |
+| 4 | Đọc dữ liệu từ bộ nhớ cảm biến |  |
+| 5 | Tiền xử lý dữ liệu  | Giá trị 6 |
+
+
 Sensor Instance truy xuất dữ liệu từ bộ nhớ cảm biến BME68x bằng chuẩn giao tiếp phần cứng SPI; thực hiện hiệu chỉnh, xử lý dữ liệu thô; đẩy dữ liệu lên theo loại tương ứng.  
 Có 4 loại dữ liệu được định nghĩa bởi nhà sản xuất, bao gồm:
 - BME68x_TEMPERATURE
