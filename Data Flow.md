@@ -26,7 +26,7 @@ Các loại dữ liệu này dùng để xác định kiểu cảm biến trong 
 #### Sensor Instance và SEE
 SEE chứa một tập các framework để thao tác với cảm biến. Hàm ```notify_event()``` được gọi để thông báo cho SEE rằng có sự thay đổi dữ liệu trên cảm biến, và SEE nhận dữ liệu mới.
 #### SEE và HAL  
-Dữ liệu trên SEE được gửi đến client thông qua client API. Trong hệ thống thiết kế, client là HAL. HAL truy xuất dữ liệu từ SEE thông qua giao diện gói tin của client API.
+Dữ liệu trên SEE được gửi đến client thông qua client API. Trong hệ thống thiết kế, client là HAL. HAL truy xuất dữ liệu từ SEE thông qua giao diện gói tin (Qualcomm Messaging Interface - QMI) của client API.
 #### HAL và App
 Từ HAL, các ứng dụng có thể lấy dữ liệu cảm biến thông qua **Sensor Manager** cung cấp bởi framework API (API hệ thống).
 ## II. Hiện tại
